@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Lossless Scaling offers seamless, high-quality scaling for games, enhancing visuals with advanced scaling algorithms and frame generation.">
+        <meta name="author" content="THS">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Lossless Scaling - Next-Gen Game Scaling">
+        <meta property="og:description" content="Experience seamless, high-quality scaling with Lossless Scaling, an advanced tool for enhancing game visuals and performance.">
+        <meta property="og:url" content="https://lossless-scaling.cybar.xyz">
+        <meta property="og:image" content="https://lossless-scaling.cybar.xyz/banner.webp">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@lossless_scaling">
+        <meta name="twitter:title" content="Lossless Scaling - Next-Gen Game Scaling">
+        <meta name="twitter:description" content="Upscale your games with Lossless Scaling, an advanced scaling tool for the best visual enhancement.">
+        <meta name="twitter:image" content="https://lossless-scaling.cybar.xyz/banner.webp">
+        <link rel="icon" href="https://lossless-scaling.cybar.xyz/favicon.ico" type="image/x-icon">
+        <title>Lossless Scaling - Next-Gen Game Scaling</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('banner.webp') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-download {
+            background-color: rgba(35, 134, 54, 0.8);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            border: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: rgba(46, 160, 67, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0px 0px 20px 2px rgba(35, 134, 54, 1);
+            text-shadow: 0px 0px 20px rgba(35, 134, 54, 0.9);
+        }
+
+        .version-info {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .version-info .badge {
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 50px;
+            margin-right: 10px;
+        }
+
+        .version-info .bg-success {
+            background-color: #28a745;
+        }
+
+        .version-info .bg-warning {
+            background-color: #ffc107;
+            color: #343a40;
+        }
+        .features-section {
+            background-color: #1c2128;
+            padding: 50px 0;
+        }
+
+        .feature-card {
+            background-color: rgba(33, 38, 45, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card i {
+            font-size: 40px;
+            color: #28a745;
+        }
+
+        .feature-card h5 {
+            font-size: 22px;
+            margin-top: 15px;
+            color: #f1f1f1;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+        }
+        .screenshots-section {
+            padding: 50px 0;
+            background-color: #1c2128;
+        }
+
+        .screenshots-section h2 {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .screenshot-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-img:hover {
+            transform: scale(1.05);
+        }
+
+        .download-section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #1c2128;
+        }
+
+        .download-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .download-card {
+            background-color: rgba(33, 38, 45, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .download-card .fas {
+            font-size: 36px;
+            color: #28a745;
+        }
+
+        .download-card .version-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #f1f1f1;
+        }
+
+        .download-card p {
+            color: #b0b0b0;
+            margin: 10px 0;
+        }
+
+        .download-card .btn {
+            background-color: rgba(35, 134, 54, 0.8);
+            color: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .download-card .btn:hover {
+            background-color: rgba(46, 160, 67, 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0d1117;
+            padding: 20px 0;
+            text-align: center;
+            color: #8b949e;
+        }
+
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .download-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .hero-section {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="banner-nav.webp" alt="Lossless Scaling Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#download">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#screenshots">Screenshots</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-5">Upscale Your Games Without Compromise</h1>
+            <p class="lead">Experience seamless, high-quality scaling with Lossless Scaling.</p>
+
+            <div class="version-info mt-3">
+                <span class="badge bg-success me-2">Stable v2.13.2</span>
+                <span class="badge bg-warning text-dark">Beta v3.0.0.2</span>
+            </div>
+
+            <a href="#download" class="btn btn-download mt-3"><i class="fas fa-download me-2"></i>Download Now</a>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <h3 class="text-white mb-5">Download the Latest Versions</h3>
+        <div class="download-cards">
+            <!-- Beta Version Card -->
+            <div class="download-card">
+                <i class="fas fa-flask"></i>
+                <h5 class="version-title">Beta Version</h5>
+                <p>Test new features before they are officially released.</p>
+                <a href="https://i.cybar.xyz/Lossless.Scaling.Build.17002893.exe" class="btn">Download Beta</a>
+            </div>
+
+            <!-- Stable Version Card -->
+            <div class="download-card">
+                <i class="fas fa-check-circle"></i>
+                <h5 class="version-title">Stable Version</h5>
+                <p>The latest stable version with fully tested features.</p>
+                <a href="https://i.cybar.xyz/Lossless.Scaling.Build.17002899.exe" class="btn">Download Stable</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Screenshots Section -->
+    <section class="screenshots-section" id="screenshots">
+        <div class="container">
+            <h2 class="text-center text-white">See Lossless Scaling in Beta</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="Screenshot 1.webp" alt="Screenshot 1" class="screenshot-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="Screenshot 2.webp" alt="Screenshot 2" class="screenshot-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="Screenshot 3.webp" alt="Screenshot 3" class="screenshot-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white">Key Features of Lossless Scaling</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h5>Fast and Efficient Scaling</h5>
+                        <p>Seamless frame generation and ultra-fast upscaling for smooth gaming experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h5>Multiple Scaling Options</h5>
+                        <p>Supports a range of algorithms like AMD FSR, NVIDIA Image Scaling, Integer Scaling, and more.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h5>ML-Based Scaling</h5>
+                        <p>Leverage cutting-edge machine learning for enhanced visual fidelity and upscaling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+     <br>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="text-center mb-4">About Lossless Scaling</h2>
+            <p>Lossless Scaling allows you to scale windowed games to full screen using state-of-the-art scaling algorithms, as well as use ML-based proprietary scaling and frame generation.</p>
+            <ul>
+                <li><strong>Frame Generation:</strong> LSFG</li>
+                <li><strong>Scaling Options:</strong> LS1, AMD FSR, NVIDIA Image Scaling, Integer Scaling, Nearest Neighbor, xBR, Anime4K, Sharp Bilinear, Bicubic CAS</li>
+                <li>Enhance games without native support for frame generation and upscale both modern and pixel-art games.</li>
+            </ul>
+            <iframe src="https://steamdb.info/embed/?appid=993090"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Lossless Scaling. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
